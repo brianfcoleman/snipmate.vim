@@ -2,14 +2,14 @@
 snippet main
 	int main(int argc, const char *argv[])
 	{
-		${1}
-		return 0;
+	  ${1}
+	  return 0;
 	}
 snippet mainn
 	int main(void)
 	{
-		${1}
-		return 0;
+	  ${1}
+	  return 0;
 	}
 # #include <...>
 snippet inc
@@ -26,15 +26,15 @@ snippet def
 	#define
 snippet ifdef
 	#ifdef ${1:FOO}
-		${2:#define }
+	  ${2:#define }
 	#endif
 snippet #if
 	#if ${1:FOO}
-		${2}
+	  ${2}
 	#endif
 # Header Include-Guard
 snippet once
-	#ifndef ${1:`toupper(Filename('$1_H', 'UNTITLED_H'))`}
+	#ifndef ${1:`toupper(Filename('$1_H_', 'UNTITLED_H_'))`}
 
 	#define $1
 
@@ -43,41 +43,48 @@ snippet once
 	#endif /* end of include guard: $1 */
 # If Condition
 snippet if
-	if (${1:/* condition */}) {
-		${2:/* code */}
+	if (${1:/* condition */})
+	{
+	  ${2:/* code */}
 	}
 snippet el
-	else {
-		${1}
+	else
+	{
+	  ${1}
 	}
 # Ternary conditional
 snippet t
 	${1:/* condition */} ? ${2:a} : ${3:b}
 # Do While Loop
 snippet do
-	do {
-		${2:/* code */}
-	} while (${1:/* condition */});
+	do
+	{
+	  ${2:/* code */}
+	}
+	while (${1:/* condition */});
 # While Loop
 snippet wh
-	while (${1:/* condition */}) {
-		${2:/* code */}
+	while (${1:/* condition */})
+	{
+	  ${2:/* code */}
 	}
 # For Loop
 snippet for
-	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
-		${4:/* code */}
+	for (${2:i} = 0; $2 < ${1:count}; $2${3:++})
+	{
+	  ${4:/* code */}
 	}
 # Custom For Loop
 snippet forr
-	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) {
-		${5:/* code */}
+	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++})
+	{
+	  ${5:/* code */}
 	}
 # Function
 snippet fun
 	${1:void} ${2:function_name}(${3})
 	{
-		${4:/* code */}
+	  ${4:/* code */}
 	}
 # Function Declaration
 snippet fund
@@ -87,19 +94,25 @@ snippet td
 	typedef ${1:int} ${2:MyCustomType};${3}
 # Struct
 snippet st
-	struct ${1:`Filename('$1_t', 'name')`} {
-		${2:/* data */}
-	}${3: /* optional variable list */};${4}
+	struct ${1:`Filename('$1_t', 'name')`}
+	{
+	  ${2:/* data */}
+	}
+	${3: /* optional variable list */};${4}
 # Typedef struct
 snippet tds
-	typedef struct ${2:_$1 }{
-		${3:/* data */}
-	} ${1:`Filename('$1_t', 'name')`};
+	typedef struct ${2:_$1 }
+	{
+	  ${3:/* data */}
+	}
+	${1:`Filename('$1_t', 'name')`};
 # Typdef enum
 snippet tde
-	typedef enum {
-		${1:/* data */}
-	} ${2:foo};
+	typedef enum
+	{
+	  ${1:/* data */}
+	}
+	${2:foo};
 # printf
 # unfortunately version this isn't as nice as TextMates's, given the lack of a
 # dynamic `...`
@@ -111,3 +124,7 @@ snippet fpr
 # This is kind of convenient
 snippet .
 	[${1}]${2}
+# Copyright notice
+snippet copy
+	/* Copyright (C) 2002-2013 RealVNC Ltd.  All Rights Reserved.
+	*/
