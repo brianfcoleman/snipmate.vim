@@ -35,12 +35,11 @@ snippet #if
 # Header Include-Guard
 snippet once
 	#ifndef ${1:`toupper(Filename('$1_H_', 'UNTITLED_H_'))`}
-
 	#define $1
 
 	${2}
 
-	#endif /* end of include guard: $1 */
+	#endif
 # If Condition
 snippet if
 	if (${1:/* condition */})
